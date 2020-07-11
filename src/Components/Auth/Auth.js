@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
-import app from "../Firebase";
+import app from "../../Firebase";
 import './Auth.css'
 
 export default function Auth() {
