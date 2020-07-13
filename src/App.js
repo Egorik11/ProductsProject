@@ -1,12 +1,22 @@
 import React from "react";
-import Auth from "../src/Components/Auth/Auth";
+import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Home";
+import Login from "./AuthPage";
+import { AuthProvider } from "./Auth";
+import PrivateRoute from "./PrivateRoute";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Auth />
-    </>
+    <AuthProvider>
+      <Router>
+        <div>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+        </div>
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
